@@ -16,6 +16,7 @@ jobs:
         id: pnpm-install
         with:
           version: 7.26.3
+        run: pnpm install
 
       - name: Build
         run: pnpm build
