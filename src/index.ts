@@ -1,6 +1,7 @@
 export * from './hooks/use-gsap-context'
 export * from './hooks/use-gsap-effect'
 export * from './hooks/use-isomorphic-layout-effect'
+export * from './hooks/use-match-media'
 export * from './hooks/use-merge-refs'
 export * from './hooks/use-selector'
 export * from './hooks/use-state-ref'

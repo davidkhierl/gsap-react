@@ -134,6 +134,35 @@ useLayoutEffect(() => {
 
 [See demo](https://codepen.io/GreenSock/pen/f7a9589f001a66076d7e03ef61859cfd)
 
+#### `useMatchMedia`
+
+Using match media.
+
+```tsx
+import { gsap } from 'gsap'
+import { useMatchMedia, useSelector } from 'gsap-react'
+import { useLayoutEffect, useRef } from 'react'
+
+function App() {
+  const ref = useRef<HTMLDivElement>(null)
+  const mm = useMatchMedia(ref)
+
+  useLayoutEffect(() => {
+    mm.add('(min-width: 768px)', () => {
+      gsap.to(q('.box'), { x: 200 })
+    })
+
+    return () => mm.revert()
+  }, [])
+
+  return (
+    <div ref={ref}>
+      <div className="box">Box 1</div>
+    </div>
+  )
+}
+```
+
 #### `useMergeRefs`
 
 Merge multiple refs, useful especially when using with forwardRef.
@@ -191,6 +220,7 @@ function App() {
 For more information, visit [GSAP Hooks](https://greensock.com/react-advanced/#hooks).
 
 ### Components (WIP)
+
 Coming Soon
 
 ### Contributing
