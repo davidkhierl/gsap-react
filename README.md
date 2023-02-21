@@ -293,6 +293,8 @@ function RootLayout({ children }: { children?: React.ReactNode }) {
 You may encounter some issues when you have a component that uses `ScrollTrigger`. To fix this we need to wait for `ScrollSmoother` plugin to initialize, we can use the `useSmoothScroll` hook to get the state of the smoother.
 
 ```tsx
+'use client'
+
 import { gsap } from 'gsap'
 import { useIsomorphicLayoutEffect, useSmoothScroll } from 'gsap-react'
 import { useRef } from 'react'
@@ -324,6 +326,8 @@ function MyComponent() {
   )
 }
 ```
+
+Don't forget the 'use client' directive when using app dir in NextJS.
 
 ### Contributing
 
