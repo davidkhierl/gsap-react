@@ -27,18 +27,18 @@
   "author": "David Khierl <hi@davidkhierl.com>",
   "license": "MIT",
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/node": "^18.13.0",
     "@types/react": "^18.0.27",
     "eslint": "^8.33.0",
     "gsap": "^3.11.4",
     "prettier": "^2.8.3",
+    "prettier-plugin-organize-imports": "^3.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^4.1.2",
+    "semantic-release": "^20.1.0",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.5",
-    "semantic-release": "^20.1.0"
+    "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "gsap": "^3.11.4",

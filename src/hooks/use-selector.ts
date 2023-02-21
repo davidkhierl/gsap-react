@@ -8,4 +8,3 @@ export function useSelector<T>(
   const q = useMemo(() => gsap.utils.selector(ref), [ref])
   return [q, ref]
 }
-
