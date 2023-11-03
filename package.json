@@ -1,7 +1,7 @@
 {
   "name": "gsap-react",
   "private": false,
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Collection of React utilities and hooks for GSAP",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -15,8 +15,8 @@
     "build:esm": "tsc -p tsconfig.build.json --module esNext --outDir dist/esm --target es6",
     "clean": "rimraf -rf ./dist",
     "prebuild": "pnpm clean",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "semantic-release": "semantic-release"
+    "release": "pnpm build && changeset publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "gsap",
@@ -27,6 +27,7 @@
   "author": "David Khierl <hi@davidkhierl.com>",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@types/node": "^18.13.0",
     "@types/react": "^18.2.7",
     "eslint": "^8.41.0",
@@ -36,7 +37,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.1",
-    "semantic-release": "^21.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   },

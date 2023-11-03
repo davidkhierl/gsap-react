@@ -1,0 +1,40 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install Node.js 21
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: 8
+      - name: Config pnpm
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+      - name: Install dependencies
+        run: pnpm install
+      - name: Create Release Pull Request
+        uses: changesets/action@v1
+        with:
+          publish: pnpm release
+          commit: 'chore: release packages'
+          title: 'chore: release packages'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
