@@ -2,7 +2,7 @@ import { gsap } from 'gsap'
 import { ScrollSmoother } from 'gsap/dist/ScrollSmoother'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { forwardRef, HTMLAttributes } from 'react'
-import { useIsomorphicLayoutEffect } from '../../hooks/use-isomorphic-layout-effect'
+import { useIsomorphicLayoutEffect } from '../../hooks'
 import { useSmoothScroll } from './use-smooth-scroll'
 
 export interface SmoothScrollWrapperProps {
